@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\Authenticate;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+require __DIR__.'/auth.php';
 Route::get('/', [HomeController::class,'index'])->name('home');
+
+// Menu
+Route::get('/menu/filter?menuType=', [MenuController::class, 'index'])->name('menu');

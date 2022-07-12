@@ -49,7 +49,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="">Menu</a></li>
                 @guest
-                    <li><a href="">Rigister</a></li>
+                    <li><a href="{{route('register')}}">Rigister</a></li>
                     <li><a href="">Login</a></li>
                 @else
                     {{-- @if (auth()->user()->role == 'customer') --}}
@@ -77,7 +77,7 @@
             </div>
         </nav>
     </header>
-
+{{------------------- Main Conten -------------------------------}}
     <main>
         @yield('content')
     </main>
