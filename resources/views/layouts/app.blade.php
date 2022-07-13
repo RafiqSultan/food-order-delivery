@@ -50,7 +50,7 @@
                 <li><a href="">Menu</a></li>
                 @guest
                     <li><a href="{{route('register')}}">Rigister</a></li>
-                    <li><a href="">Login</a></li>
+                    <li><a href="{{route('login')}}">Login</a></li>
                 @else
                     {{-- @if (auth()->user()->role == 'customer') --}}
                     <li><a href="">Cart</a></li>
