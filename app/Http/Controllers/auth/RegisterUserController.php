@@ -51,6 +51,7 @@ class RegisterUserController extends Controller
             return redirect()->route('home');
         }
         return back();
+        
 
         // event(new Registered($user));
 
