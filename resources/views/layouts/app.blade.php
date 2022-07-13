@@ -52,20 +52,20 @@
                     <li><a href="{{route('register')}}">Rigister</a></li>
                     <li><a href="{{route('login')}}">Login</a></li>
                 @else
-                    {{-- @if (auth()->user()->role == 'customer') --}}
+                    @if (auth()->user()->role == 'customer')
                     <li><a href="">Cart</a></li>
                     <li><a href="">Order</a></li>
-                    {{-- @elseif (auth()->user()->role != 'customer') --}}
+                    @elseif (auth()->user()->role != 'customer')
                     <li><a href="">Order</a></li>
-                    {{-- @if (auth()->user()->role == 'admin') --}}
+                    @if (auth()->user()->role == 'admin')
                     <li><a href="">Discount</a></li>
-                    {{-- @endif
-                    @endif --}}
+                    @endif
+                    @endif
                     <li>
-                        <a href="" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"></a>
+                        <a href="{{route('logout')}}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">{{ __('logout')}}</a>
                     </li>
-                    <form id="logout-form" action="" method="POST" class="d-none">
+                    <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                         @csrf
                     </form>
                 @endguest

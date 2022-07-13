@@ -14,6 +14,15 @@ Route::get('login',[AuthenticatedSessionController::class,'index'])->name('login
 Route::post('login',[AuthenticatedSessionController::class,'valditeUser']);
 
 
+
+
  });
 
-?>
+
+ Route::middleware('auth')->group(function(){
+
+    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+ });
+
+ ?>
