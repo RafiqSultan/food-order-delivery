@@ -24,18 +24,23 @@ class RegisterUserController extends Controller
     public function store(Request $request){
 
         Validator::validate($request->all(),[
-            'username'=>['required','string','max:255'],
-            'email'   =>['required','string','email','max:255','unique:users'],
-            'password'=>['required','confirmed',Rules\password::defaults()]
-        ]);
+            'name'=>['required','max:255'],
+            'email'   =>['required','email','min:8','max:255','unique:users'],
+            'password'=>['required','confirmed'],
+            'password_confirmation'=>['required','same:password']
+        ],
+        [
 
-        // $user=User::create([
-        //     'username'=>$request->name,
-        //     'email'   =>$request->email,
-        //     'password'=>Hash::make($request->password),
-        //     // when user who registers themselves are all customers.
-        //     'role'    =>'admin',
-        // ]);
+            'name.required'=>'This field requried',
+            'password.min'=>'Password less 8 character',
+            'password_confirmation'=>'password dont match',
+            'email'=>'email not validate'
+        ]
+        );
+
+        
+            // when user who registers themselves are all customers.
+       
         $user=new User();
         $user->username=$request->name;
         $user->email=$request->email;
