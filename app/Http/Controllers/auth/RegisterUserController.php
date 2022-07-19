@@ -39,14 +39,13 @@ class RegisterUserController extends Controller
         );
 
         
-            // when user who registers themselves are all customers.
+        // when user who registers themselves are all customers.
        
         $user=new User();
         $user->username=$request->name;
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->role='customer';  //user who registers themselves are all customers.
-        // $user->save();
         if($user->save()){
             return redirect()->route('home');
         }

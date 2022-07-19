@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\DashboradController;
 use App\Http\Controllers\auth\RegisterUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\Authenticate;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 require __DIR__.'/auth.php';
+
 Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::post('create-account',[RegisterUserController::class,'store'])->name('valdite_user');
@@ -26,3 +28,6 @@ Route::post('create-account',[RegisterUserController::class,'store'])->name('val
 
 // Menu
 Route::get('/menu/filter?menuType=', [MenuController::class, 'index'])->name('menu');
+
+//dashboard
+Route::get('/dashboard', [DashboradController::class, 'index'])->name('dashboard');

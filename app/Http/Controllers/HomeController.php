@@ -10,10 +10,10 @@ class HomeController extends Controller
     //
     public function index(){
         if(Auth::user() && auth()->user()->role=="admin")
-            return redirect()->route('dashborad');
+            return redirect()->route('dashboard');
         
-            elseif (Auth::user() && auth()->user()->role=="kitchenOrder");
-                redirect()->route('kitchenOrder');
+            // elseif (Auth::user() && auth()->user()->role=="kitchenOrder");
+            //     redirect()->route('kitchenOrder');
             
             return view('home');
     }
