@@ -83,7 +83,7 @@
             <br>
             <li ><a href="" id="sidebar-discount"><i class="fa fa-ticket" aria-hidden="true"></i>Discount</a></li>
             <br>
-            <li ><a href="" id="sidebar-account"><i class="fa fa-user" aria-hidden="true"></i>Account</a></li>
+            <li ><a href="{{ route('createAccount') }}" id="sidebar-account"><i class="fa fa-user" aria-hidden="true"></i>Account</a></li>
             <br>
         @else
             <li ><a href="" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AccountCreationController;
 use App\Http\Controllers\admin\DashboradController;
 use App\Http\Controllers\auth\RegisterUserController;
 use App\Http\Controllers\HomeController;
@@ -31,3 +32,6 @@ Route::get('/menu/filter?menuType=', [MenuController::class, 'index'])->name('me
 
 //dashboard
 Route::get('/dashboard', [DashboradController::class, 'index'])->name('dashboard');
+// Account Creation
+Route::get('/account/create', [AccountCreationController::class, 'create'])->name('createAccount');
+Route::post('/account/create', [AccountCreationController::class, 'store'])->name('accountStoring');
