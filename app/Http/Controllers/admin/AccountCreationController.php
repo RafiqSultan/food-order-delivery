@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AccountCreationController extends Controller
 {
@@ -28,7 +30,7 @@ class AccountCreationController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', Rules\Password::defaults()],
+            'password' => ['required','min:8'],
             'role' => ['required', 'string']
         ]);
 
@@ -39,6 +41,9 @@ class AccountCreationController extends Controller
             'password' => Hash::make($request->password),
             'role' => $request->role
         ]);
+
+        // redirect back to account creation page along with a success session.
+        return redirect()->route('createAccount')->with('success', 'Account created!');
 
     }
 }
