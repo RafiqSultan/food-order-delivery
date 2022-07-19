@@ -52,13 +52,14 @@
                     <li><a href="{{route('register')}}">Rigister</a></li>
                     <li><a href="{{route('login')}}">Login</a></li>
                 @else
+                
                     @if (auth()->user()->role == 'customer')
                     <li><a href="">Cart</a></li>
                     <li><a href="">Order</a></li>
                     @elseif (auth()->user()->role != 'customer')
                     <li><a href="">Order</a></li>
                     @if (auth()->user()->role == 'admin')
-                    <li><a href="">Discount</a></li>
+                    <li><a href="">Cart</a></li>
                     @endif
                     @endif
                     <li>

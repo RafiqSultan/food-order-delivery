@@ -26,9 +26,7 @@
 <section class="banner">
     <div class="container">
         <div class="col-md-10 col-lg-8 details">
-            <h3>FRESHEST SUSHI IN TOWN</h3>
-            <h1>Experience a taste of sushi as if you are in Japan</h1>
-            <a href="" class="btn primary-btn" style="width:250px;">Discover menu</a>
+            <a href="" class="btn primary-btn" style="width:250px;margin:70% 46% 30%  ">Discover menu</a>
         </div>
     </div>
 </section>
