@@ -49,7 +49,7 @@
             @if (auth()->user()->role == 'admin')
                 <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                 <li><a href="">Orders</a></li>
-                <li><a href="">Menu</a></li>
+                <li><a href="{{ route('menu') }}">Menu</a></li>
                 <li><a href="">Discount</a></li>
                 <li><a href="">Account</a></li>
             @endif
@@ -79,7 +79,7 @@
             <br>
             <li ><a href="" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
             <br>
-            <li ><a href="" id="sidebar-menu"><i class="fa fa-book" aria-hidden="true"></i>Menu</a></li>
+            <li ><a href="{{ route('menu') }}" id="sidebar-menu"><i class="fa fa-book" aria-hidden="true"></i>Menu</a></li>
             <br>
             <li ><a href="" id="sidebar-discount"><i class="fa fa-ticket" aria-hidden="true"></i>Discount</a></li>
             <br>

@@ -16,6 +16,13 @@ return new class extends Migration
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('discountCode');
+            $table->smallInteger('percentage');
+            $table->float('minSpend', 6, 2);
+            $table->float('cap', 5, 2);
+            $table->date('startDate'); // CONVERT TO DATE ONLY
+            $table->date('endDate'); // CONVERT TO DATE ONLY
+            $table->text('description')->nullable();
         });
     }
 

@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
+            $table->timestamp('dateTime');
+            $table->boolean('completed')->default(false);
+            $table->string('type'); // dineIn, takeAway
         });
     }
 

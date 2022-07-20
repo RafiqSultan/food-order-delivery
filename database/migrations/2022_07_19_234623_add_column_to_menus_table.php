@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::table('menus', function (Blueprint $table) {
             //
+            $table->string('type')->default('undefined');
+            $table->decimal('estCost', 6, 2)->default('undefined');
+            $table->integer('allergic')->default('0');
+            $table->integer('vegetarian')->default('0');
+            $table->integer('vegan')->default('0');
         });
     }
 

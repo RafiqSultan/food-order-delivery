@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('type')->default('undefined');
+            $table->string('name');
+            $table->string('description');
+            $table->decimal('price', 6, 2);
+            $table->decimal('estCost', 6, 2)->default('undefined');
+            $table->string('image');
+            $table->string('size');
+            $table->integer('barbecue')->default('0');
+            $table->integer('vegetarian')->default('0');
         });
     }
 
