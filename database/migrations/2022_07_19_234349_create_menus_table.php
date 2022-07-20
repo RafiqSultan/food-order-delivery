@@ -22,8 +22,9 @@ return new class extends Migration
             $table->decimal('estCost', 6, 2)->default('undefined');
             $table->string('image');
             $table->string('size');
-            $table->integer('barbecue')->default('0');
-            $table->integer('vegetarian')->default('0');
+            $table->integer('candy')->default('0');
+            $table->integer('meal')->default('0');
+            $table->integer('drink')->default('0');
         });
     }
 

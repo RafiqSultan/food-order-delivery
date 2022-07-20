@@ -16,8 +16,9 @@ class Menu extends Model
         'price',
         'image',
         'size',
-        'barbecue',
-        'vegetarian'
+        'candy',
+        'meal',
+        'drink',
         
     ];
 

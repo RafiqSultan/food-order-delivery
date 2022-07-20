@@ -15,6 +15,8 @@ class AuthenticatedSessionController extends Controller
 
         return view('auth.login');
     }
+
+    // when user login.
     public function valditeUSer(LoginRequested $request){
 
         $request->authenticate();

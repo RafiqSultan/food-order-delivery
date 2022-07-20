@@ -56,11 +56,11 @@
                                      <select name="menuType" class="form-select" id="itemTypeInputGroup" >
                                          <option name="menuType" value="sandwich">Sandwich</option>
                                          <option name="menuType" value="pizza">Pizza</option>
-                                         <option name="menuType" value="Temaki">Temaki</option>
-                                         <option name="menuType" value="Bento">Bento</option>
-                                         <option name="menuType" value="Ramen">Ramen</option>
-                                         <option name="menuType" value="Beverage">Beverage</option>
-                                         <option name="menuType" value="Dessert">Dessert</option>
+                                         <option name="menuType" value="candies">Candies</option>
+                                         <option name="menuType" value="tart">Cake Tart</option>
+                                         <option name="menuType" value="chicken">Chicken</option>
+                                         <option name="menuType" value="chocolate">Chocolate</option>
+                                         <option name="menuType" value="drinks">Drinks</option>
                                      </select>
                                  </div>
                              </div>
@@ -91,7 +91,7 @@
                                  <label for="ItemCost" class="form-label">Item Estimated Cost</label>
                                  <div class="input-group mb-3">
                                      <span class="input-group-text">$</span>
-                                     <input name="menuEstCost" type="number" min=0 step=0.01 class="form-control price-class" placeholder="Cost" aria-label="Item Cost" required>
+                                     <input name="menuEstCost" type="number" min=0 step=0.01 class="form-control price-class" placeholder="Cost" aria-label="Item Cost" >
                                      <span class="validity"></span>
                                  </div>
                              </div>
@@ -124,19 +124,26 @@
                              <div class="mb-1">
                                  <label for="SpecialCondition" class="form-label">Special Condition</label>
                                  <div class="form-check">
-                                     <input name="menuBarbecue" type="hidden" value=0>
-                                     <input name='menuBarbecue' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
+                                     <input name="menuCandies" type="hidden" value=0>
+                                     <input name='menuCandies' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
                                      <label class="form-check-label" for="dropdownCheck">
-                                        Barbecue
+                                        Candies
                                      </label>
                                  </div>
                                  <div class="form-check">
-                                     <input name="menuVegetarian" type="hidden" value=0>
-                                     <input name='menuVegetarian' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
+                                     <input name="menuMeals" type="hidden" value=0>
+                                     <input name='menuMeals' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
                                      <label class="form-check-label" for="dropdownCheck">
-                                     Vegetarian
+                                     Meals
                                      </label>
                                  </div>
+                                 <div class="form-check">
+                                    <input name="menuDrinks" type="hidden" value=0>
+                                    <input name='menuDrinks' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                    Drinks
+                                    </label>
+                                </div>
                                  
                              </div>
  
@@ -154,24 +161,24 @@
                      <button type="submit" name="menuType" value="" class="btn btn-light menu-type-button">All</button>
                      <button type="submit" name="menuType" value="sandwich" class="btn btn-light menu-type-button">Sandwich</button>
                      <button type="submit" name="menuType" value="pizza" class="btn btn-light menu-type-button">Pizza</button>
-                     <button type="submit" name="menuType" value="Temaki" class="btn btn-light menu-type-button">Temaki</button>
-                     <button type="submit" name="menuType" value="Bento" class="btn btn-light menu-type-button">Bento</button>
-                     <button type="submit" name="menuType" value="Ramen" class="btn btn-light menu-type-button">Ramen</button>
-                     <button type="submit" name="menuType" value="Beverage" class="btn btn-light menu-type-button">Beverage</button>
-                     <button type="submit" name="menuType" value="Dessert" class="btn btn-light menu-type-button">Dessert</button>
+                     <button type="submit" name="menuType" value="candies" class="btn btn-light menu-type-button">Candies</button>
+                     <button type="submit" name="menuType" value="tart" class="btn btn-light menu-type-button">Cake Tart</button>
+                     <button type="submit" name="menuType" value="chocolate" class="btn btn-light menu-type-button">Chocolates</button>
+                     <button type="submit" name="menuType" value="cheken" class="btn btn-light menu-type-button">Cheken</button>
+                     <button type="submit" name="menuType" value="drink" class="btn btn-light menu-type-button">Drinks</button>
                  </form>
              </div>
          @else
              <div class="col-md-8 offset-md-2 col-12 text-center menu-type my-3">
                  <form method="get" action="{{ route('filterMenu') }}">
-                     <button type="submit" name="menuType" value="" class="btn btn-light menu-type-button">All</button>
-                     <button type="submit" name="menuType" value="sandwich" class="btn btn-light menu-type-button">Sandwich</button>
-                     <button type="submit" name="menuType" value="pizza" class="btn btn-light menu-type-button">Pizza</button>
-                     <button type="submit" name="menuType" value="Temaki" class="btn btn-light menu-type-button">Temaki</button>
-                     <button type="submit" name="menuType" value="Bento" class="btn btn-light menu-type-button">Bento</button>
-                     <button type="submit" name="menuType" value="Ramen" class="btn btn-light menu-type-button">Ramen</button>
-                     <button type="submit" name="menuType" value="Beverage" class="btn btn-light menu-type-button">Beverage</button>
-                     <button type="submit" name="menuType" value="Dessert" class="btn btn-light menu-type-button">Dessert</button>
+                    <button type="submit" name="menuType" value="" class="btn btn-light menu-type-button">All</button>
+                    <button type="submit" name="menuType" value="sandwich" class="btn btn-light menu-type-button">Sandwich</button>
+                    <button type="submit" name="menuType" value="pizza" class="btn btn-light menu-type-button">Pizza</button>
+                    <button type="submit" name="menuType" value="candies" class="btn btn-light menu-type-button">Candies</button>
+                    <button type="submit" name="menuType" value="tart" class="btn btn-light menu-type-button">Cake Tart</button>
+                    <button type="submit" name="menuType" value="chocolate" class="btn btn-light menu-type-button">Chocolates</button>
+                    <button type="submit" name="menuType" value="cheken" class="btn btn-light menu-type-button">Cheken</button>
+                    <button type="submit" name="menuType" value="drink" class="btn btn-light menu-type-button">Drinks</button>
                  </form>
              </div>
          @endif
@@ -188,11 +195,11 @@
                                          <option name="menuType" value="">All</option>
                                          <option name="menuType" value="sandwich">Sandwich</option>
                                          <option name="menuType" value="pizza">Pizza</option>
-                                         <option name="menuType" value="Temaki">Temaki</option>
-                                         <option name="menuType" value="Bento">Bento</option>
-                                         <option name="menuType" value="Ramen">Ramen</option>
-                                         <option name="menuType" value="Beverage">Beverage</option>
-                                         <option name="menuType" value="Dessert">Dessert</option>
+                                         <option name="menuType" value="candies">Candies</option>
+                                         <option name="menuType" value="tart">Cake Tart</option>
+                                         <option name="menuType" value="chicken">Chicken</option>
+                                         <option name="menuType" value="chocolate">Chocolate</option>
+                                         <option name="menuType" value="drinks">Drinks</option>
                                      </select>
                                  </div>
                              </div>
@@ -229,18 +236,27 @@
  
                              <div class="mb-3">
                                <label for="SpecialCondition" class="form-label">Special Condition</label>
-                                 <div class="form-check">
-                                     <input name='menuBarbecue' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
-                                     <label class="form-check-label" for="dropdownCheck">
-                                     Barbecue
-                                     </label>
-                                 </div>
-                                 <div class="form-check">
-                                     <input name='menuVegetarian' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
-                                     <label class="form-check-label" for="dropdownCheck">
-                                     Vegetarian
-                                     </label>
-                                 </div>
+                               <div class="form-check">
+                                <input name="menuCandies" type="hidden" value=0>
+                                <input name='menuCandies' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
+                                <label class="form-check-label" for="dropdownCheck">
+                                   Candies
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input name="menuMeals" type="hidden" value=0>
+                                <input name='menuMeals' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
+                                <label class="form-check-label" for="dropdownCheck">
+                                Meals
+                                </label>
+                            </div>
+                            <div class="form-check">
+                               <input name="menuDrinks" type="hidden" value=0>
+                               <input name='menuDrinks' value=1 type="checkbox" class="form-check-input" id="dropdownCheck">
+                               <label class="form-check-label" for="dropdownCheck">
+                               Drinks
+                               </label>
+                           </div>
                                  
                              </div>
  

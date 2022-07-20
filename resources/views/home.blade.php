@@ -18,7 +18,7 @@
 @endsection
 
 @section('logoFileName')
-{{ URL::asset('/images/White Logo.png') }}
+{{ URL::asset('/images/logo_prev_ui.png') }}
 @endsection
 
 

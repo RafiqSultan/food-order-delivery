@@ -39,8 +39,9 @@ class MenuController extends Controller
         $newMenuItem->estCost = $request->menuEstCost;
         $newMenuItem->image = $newImageName;
         $newMenuItem->size = $request->menuSize;
-        $newMenuItem->barbecue = $request->menuABarbecue;
-        $newMenuItem->vegetarian = $request->menuVegetarian;
+        $newMenuItem->candy= $request->menuCandies;
+        $newMenuItem->meal = $request->menuMeals;
+        $newMenuItem->drink = $request->menuDrinks;
         $newMenuItem->save();
         
         return redirect('/menu/filter?menuType=');
@@ -86,9 +87,9 @@ class MenuController extends Controller
         $menu->price = $request->menuPrice;
         $menu->estCost = $request->menuEstCost;
         $menu->size = $request->menuSize;
-        $menu->allergic = $request->menuAllergic;
-        $menu->vegetarian = $request->menuVegetarian;
-        $menu->vegan = $request->menuVegan;
+        $menu->candy = $request->menuCandies;
+        $menu->meal = $request->menuMeals;
+        $menu->drink = $request->menuDrinks;
         $menu->save();
 
         return redirect()->route('menu');
@@ -102,7 +103,7 @@ class MenuController extends Controller
 
             // Validate user input
             $request->validate([
-                'menuImage' => 'required|mimes:jpg,png,jpeg|max:10240'
+                'menuImage' => 'required|mimes:jpg,png,jpeg,webp|max:10240'
             ]);
             
             // Delete the original image in the public/menuImages folder
@@ -152,19 +153,19 @@ class MenuController extends Controller
             $menu->where('size', $request->menuSize);
         }
 
-        if($request->filled('menuAllergic'))
+        if($request->filled('menuCandies'))
         {
-            $menu->where('allergic', $request->menuAllergic);
+            $menu->where('candy', $request->menuCandies);
         }
 
-        if($request->filled('menuVegetarian'))
+        if($request->filled('menuMeals'))
         {
-            $menu->where('vegetarian', $request->menuVegetarian);
+            $menu->where('meal', $request->menuMeals);
         }
 
-        if($request->filled('menuVegan'))
+        if($request->filled('menuDrinks'))
         {
-            $menu->where('vegan', $request->menuVegan);
+            $menu->where('drink', $request->menuDrinks);
         }
 
         return view('admin.menu', [

@@ -12,4 +12,4 @@
 {{ 'light' }}@endsection
 
 @section('logoFileName')
-{{ URL::asset('/images/Black Logo.png') }}@endsection
+{{ URL::asset('/images/logo_prev_ui.png') }}@endsection
