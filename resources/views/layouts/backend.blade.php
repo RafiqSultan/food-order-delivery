@@ -1,8 +1,4 @@
-<!-- 
-    Programmer Name: Mr. Lai Pin Cheng, Developer
-    Description: Kitchen staff and admin's layout temnplate
-    Edited on: 29 March 2022 
--->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +47,7 @@
                 <li><a href="{{ route('kitchenOrder') }}">Orders</a></li>
                 <li><a href="{{ route('menu') }}">Menu</a></li>
                 <li><a href="{{ route('discount') }}">Discount</a></li>
-                <li><a href="">Account</a></li>
+                <li><a href="{{ route('createAccount') }}">Account</a></li>
             @endif
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();

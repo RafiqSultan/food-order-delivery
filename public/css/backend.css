@@ -1,9 +1,3 @@
-/* 
-    Programmer Name: Mr. Lai Pin Cheng, Developer
-    Description: Basic frontend stylings across all administration pages
-    Edited on: 10 March 2022
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +8,7 @@
 
 
 /* NAV */
+
 nav.home-nav {
     display: none !important;
 }
@@ -80,22 +75,23 @@ nav .nav-links {
     margin-right: 15px;
 }
 
+
 /*-------------------
 Responsive Navigation
 ---------------------*/
+
 @media screen and (max-width: 990px) {
     nav.home-nav {
         display: flex !important;
     }
-
     .sidebar {
         display: none;
     }
-
     .pl-250 {
         padding-left: 0 !important;
     }
 }
+
 
 /*-------------------
 Main Content Starts Here
@@ -184,6 +180,7 @@ Main Content Starts Here
     transition: all 0.5s;
     box-shadow: 5px 5px 5px -5px #4b4949;
 }
+
 
 /*-------------------
 

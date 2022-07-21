@@ -34,7 +34,7 @@
             <div class="container py-5">
                 <div class="card col-md-6 col-12 offset-md-3">
                     <div class="card-body">
-                        <h4 class="card-title mb-5 mx-2">Zen Sushi Wishlist <span class="text-secondary h5">- {{ $cartItems->count() }} Items</span></h4>
+                        <h4 class="card-title mb-5 mx-2"> <span class="text-secondary h5">- {{ $cartItems->count() }} Items</span></h4>
 
                         @foreach ($cartItems as $item)
                             <div class="w-100 px-3 d-flex align-items-center py-3">

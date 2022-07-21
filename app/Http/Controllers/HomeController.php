@@ -9,12 +9,10 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        if(Auth::user() && auth()->user()->role=="admin")
+        if (Auth::user() && auth()->user()->role == 'admin')
             return redirect()->route('dashboard');
-        
-        elseif (Auth::user() && auth()->user()->role=="kitchenOrder");
-              return  redirect()->route('kitchenOrder');
-            
-            return view('home');
+        else if (Auth::user() && auth()->user()->role == 'kitchenStaff')
+            return redirect()->route('kitchenOrder');
+        return view('home');
     }
 }

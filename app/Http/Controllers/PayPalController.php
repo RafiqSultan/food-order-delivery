@@ -1,17 +1,20 @@
 <?php
 
+// Programmer Name: Mr. Tan Wei Kang, Developer
+// Description: Handle user payments through PayPal integration
+// Edited on: 3 April 2022
+
 namespace App\Http\Controllers;
 
-use App\Models\Discount;
-use App\Models\Order;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Srmklive\PayPal\Services\PayPal;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
-
+use App\Models\Order;
+use App\Models\Discount;
 
 class PayPalController extends Controller
 {
-    //
+
     // only authenticated users are allowed to use this controller.
     public function __construct()
     {
