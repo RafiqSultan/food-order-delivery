@@ -12,8 +12,8 @@ class HomeController extends Controller
         if(Auth::user() && auth()->user()->role=="admin")
             return redirect()->route('dashboard');
         
-            // elseif (Auth::user() && auth()->user()->role=="kitchenOrder");
-            //     redirect()->route('kitchenOrder');
+        elseif (Auth::user() && auth()->user()->role=="kitchenOrder");
+              return  redirect()->route('kitchenOrder');
             
             return view('home');
     }

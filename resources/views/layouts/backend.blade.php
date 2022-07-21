@@ -48,9 +48,9 @@
             <ul class="nav-links">
             @if (auth()->user()->role == 'admin')
                 <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li><a href="">Orders</a></li>
+                <li><a href="{{ route('kitchenOrder') }}">Orders</a></li>
                 <li><a href="{{ route('menu') }}">Menu</a></li>
-                <li><a href="">Discount</a></li>
+                <li><a href="{{ route('discount') }}">Discount</a></li>
                 <li><a href="">Account</a></li>
             @endif
                 <li>
@@ -77,16 +77,16 @@
         @if (auth()->user()->role == 'admin')
             <li ><a href="{{ route('dashboard') }}" id="sidebar-dashboard"><i class="fa fa-th-large" aria-hidden="true"></i>Dashboard</a></li>
             <br>
-            <li ><a href="" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
+            <li ><a href="{{ route('kitchenOrder') }}" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
             <br>
             <li ><a href="{{ route('menu') }}" id="sidebar-menu"><i class="fa fa-book" aria-hidden="true"></i>Menu</a></li>
             <br>
-            <li ><a href="" id="sidebar-discount"><i class="fa fa-ticket" aria-hidden="true"></i>Discount</a></li>
+            <li ><a href="{{ route('discount') }}" id="sidebar-discount"><i class="fa fa-ticket" aria-hidden="true"></i>Discount</a></li>
             <br>
             <li ><a href="{{ route('createAccount') }}" id="sidebar-account"><i class="fa fa-user" aria-hidden="true"></i>Account</a></li>
             <br>
         @else
-            <li ><a href="" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
+            <li ><a href="{{ route('kitchenOrder') }}" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
             <br>
         @endif
             <li >

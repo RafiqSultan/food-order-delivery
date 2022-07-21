@@ -76,15 +76,15 @@
                                 @endif
                             </div>
                             <div class="mobile d-flex pt-2">
-                                <p class="price">RM {{ number_format($orderItem->menu->price, 2) }}</p>
+                                <p class="price">$ {{ number_format($orderItem->menu->price, 2) }}</p>
                                 <p class="quantity">x{{ $orderItem->quantity }}</p>
-                                <p class="cart-item-total">RM {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>        
+                                <p class="cart-item-total">$ {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>        
                             </div>
                             <p class="text-muted desktop">{{ $orderItem->menu->description }}</p>
                         </div>
-                        <p class="price desktop">RM {{ number_format($orderItem->menu->price, 2) }}</p>
+                        <p class="price desktop">$ {{ number_format($orderItem->menu->price, 2) }}</p>
                         <p class="quantity desktop">x{{ $orderItem->quantity }}</p>
-                        <p class="cart-item-total desktop">RM {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>
+                        <p class="cart-item-total desktop">$ {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>
                     </div>
                     <hr>
                 @endforeach
@@ -95,20 +95,20 @@
                 <h3 class="pb-3">Summary</h3>
                 <div class="d-flex justify-content-between">
                     <h6>Subtotal</h6>
-                    <p>RM {{ $subtotal = $activeOrder->getSubtotal() }}</p>
+                    <p>$ {{ $subtotal = $activeOrder->getSubtotal() }}</p>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h6>Discount</h6>
-                    <p>-RM {{ $discount = $activeOrder->getDiscount($subtotal) }}</p>
+                    <p>$ {{ $discount = $activeOrder->getDiscount($subtotal) }}</p>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h6>Tax (6%)</h6>
-                    <p>RM {{ $tax = $activeOrder->getTax($subtotal, $discount) }}</p>
+                    <p>$ {{ $tax = $activeOrder->getTax($subtotal, $discount) }}</p>
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between">
                     <h6>Total</h6>
-                    <p>RM {{ $activeOrder->getTotal($subtotal, $discount, $tax) }}</p>
+                    <p>$ {{ $activeOrder->getTotal($subtotal, $discount, $tax) }}</p>
                 </div>
             </div>
         </div>
@@ -143,7 +143,7 @@
                     <th scope="row"><a href="{{ route('specificOrder', $order->id) }}">#{{ $order->id }}</a></th>
                     <td>{{ $order->getOrderDate() }}</td>
                     <td>{{ $order->getOrderTime() }}</td>
-                    <td>RM {{ $order->getTotalFromScratch() }}</td>
+                    <td>$ {{ $order->getTotalFromScratch() }}</td>
                     <td>
                         @if ($order->completed)
                             <div class="px-3 alert alert-success">

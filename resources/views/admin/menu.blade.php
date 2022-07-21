@@ -165,7 +165,7 @@
                      <button type="submit" name="menuType" value="tart" class="btn btn-light menu-type-button">Cake Tart</button>
                      <button type="submit" name="menuType" value="chocolate" class="btn btn-light menu-type-button">Chocolates</button>
                      <button type="submit" name="menuType" value="cheken" class="btn btn-light menu-type-button">Cheken</button>
-                     <button type="submit" name="menuType" value="drink" class="btn btn-light menu-type-button">Drinks</button>
+                     <button type="submit" name="menuType" value="drinks" class="btn btn-light menu-type-button">Drinks</button>
                  </form>
              </div>
          @else
@@ -199,7 +199,7 @@
                                          <option name="menuType" value="tart">Cake Tart</option>
                                          <option name="menuType" value="chicken">Chicken</option>
                                          <option name="menuType" value="chocolate">Chocolate</option>
-                                         <option name="menuType" value="drinks">Drinks</option>
+                                         <option name="menuType" value="drink">Drinks</option>
                                      </select>
                                  </div>
                              </div>

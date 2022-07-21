@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use Illuminate\Http\Request;
-
+use File;
 class MenuController extends Controller
 {
     //
@@ -51,14 +51,14 @@ class MenuController extends Controller
     public function showDetails($id)
     {
         $menu = Menu::find($id);
-        return view('editMenuDetails', ['admin.menu' => $menu]);
+        return view('admin.editMenuDetails', ['menu' => $menu]);
     }
 
     // Display the specific menu image field for edit
     public function showImages($id)
     {
         $menu = Menu::find($id);
-        return view('editMenuImages', ['admin.menu' => $menu]);
+        return view('admin.editMenuImages', ['menu' => $menu]);
     }
 
     /**

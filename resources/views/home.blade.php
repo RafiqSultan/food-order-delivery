@@ -26,7 +26,7 @@
 <section class="banner">
     <div class="container">
         <div class="col-md-10 col-lg-8 details">
-            <a href="" class="btn primary-btn" style="width:250px;margin:70% 46% 30%  ">Discover menu</a>
+            <a href="{{route('menu')}}" class="btn primary-btn" style="width:250px;margin:70% 46% 30%  ">Discover menu</a>
         </div>
     </div>
 </section>

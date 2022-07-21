@@ -3,9 +3,12 @@
 use App\Http\Controllers\admin\AccountCreationController;
 use App\Http\Controllers\admin\CartController;
 use App\Http\Controllers\admin\DashboradController;
+use App\Http\Controllers\admin\DiscountController;
 use App\Http\Controllers\admin\MenuController;
 use App\Http\Controllers\auth\RegisterUserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PayPalController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +53,14 @@ Route::post('/cart/create', [CartController::class, 'store'])->name('addToCart')
 Route::put('/cart/{cart}', [CartController::class, 'update'])->name('cartUpdate');
 Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cartCheckout');
 
+// Discount
+Route::get('/discount', [DiscountController::class, 'index'])->name('discount');
+Route::get('/discount/create', [DiscountController::class, 'createDiscount'])->name('createDiscount');
+Route::post('/discount/create', [DiscountController::class, 'store']);
+Route::get('/discount/{discount}', [DiscountController::class, 'specificDiscount'])->name('specificDiscount');
+Route::delete('/discount/delete/{discount}', [DiscountController::class, 'destroy'])->name('discountDestroy');
+Route::post('/discount/{discount}', [DiscountController::class, 'update'])->name('discountUpdate');
+
 // Order
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::get('/order/{order}', [OrderController::class, 'show'])->name('specificOrder');
@@ -57,3 +68,9 @@ Route::get('/staff/order', [OrderController::class, 'kitchenOrder'])->name('kitc
 Route::get('/staff/order/{order}', [OrderController::class, 'specificKitchenOrder'])->name('specificKitchenOrder');
 Route::put('/staff/order/update/{orderItem}', [OrderController::class, 'orderStatusUpdate'])->name('orderStatusUpdate');
 Route::get('/staff/previous-order', [OrderController::class, 'previousOrder'])->name('previousOrder');
+
+// PayPal
+Route::get('/process-transaction/{transactionAmount}/{orderId}/{discountID}', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('/success-transaction/{transactionAmount}/{orderId}/{discountID}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('/cancel-transaction/{orderId}', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
+
