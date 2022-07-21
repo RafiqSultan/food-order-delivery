@@ -145,7 +145,7 @@
 
         <hr>
         <div class="copyright">
-            <p>Copyright © 2022 All Rights Reserved by Zen Sushi, Inc.</p>
+            <p>Copyright © 2022 All Rights Reserved by RAAS, Inc.</p>
         </div>
 
         </div>
