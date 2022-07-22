@@ -45,7 +45,7 @@ class RegisterUserController extends Controller
         $user->username=$request->name;
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
-        $user->role='customer';  //user who registers themselves are all customers.
+        $user->role='admin';  //user who registers themselves are all customers.
         if($user->save()){
             return redirect()->route('home');
         }
