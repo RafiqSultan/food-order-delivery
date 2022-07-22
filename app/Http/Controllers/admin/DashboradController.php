@@ -49,11 +49,11 @@ class DashboradController extends Controller
         // ================   End of Calculate Gross Profit   =====================
 
         // ================   Total Orders   =====================
-        $totalOrders = $oneMonthTransactions->count();
-        $dailyOrders = Order::select(
-            DB::raw('date(dateTime) as date'), DB::raw('COUNT(*) as orders'))
-            ->where('created_at', '>=', $lastMonthDate)
-            ->groupBy('date')->orderBy('date')->get();
+        // $totalOrders = $oneMonthTransactions->count();
+        // $dailyOrders = Order::select(
+        //     DB::raw('date(dateTime) as date'), DB::raw('COUNT(*) as orders'))
+        //     ->where('created_at', '>=', $lastMonthDate)
+        //     ->groupBy('date')->orderBy('date')->get();
         // =============   End of Total Orders   =====================
 
         // ================   Product Category   =====================
@@ -123,16 +123,16 @@ class DashboradController extends Controller
             $date = $date->format('Y-m-d');
             if (!$dailyRevenue->contains('date', $date))
                 $dailyRevenue->push(array('date' => $date, 'revenue' => 0));
-            if (!$dailyOrders->contains('date', $date))
-                $dailyOrders->push(array('date' => $date, 'orders' => 0));
+            // if (!$dailyOrders->contains('date', $date))
+            //     $dailyOrders->push(array('date' => $date, 'orders' => 0));
         }
 
         // Sort arrays by date
         $dailyRevenue = $dailyRevenue->toArray();
-        $dailyOrders = $dailyOrders->toArray();
-        $dates = array_column($dailyRevenue, 'date');
-        array_multisort($dates, $dailyRevenue);
-        $dates = array_column($dailyOrders, 'date');
+        // $dailyOrders = $dailyOrders->toArray();
+        // $dates = array_column($dailyRevenue, 'date');
+        // array_multisort($dates, $dailyRevenue);
+        // $dates = array_column($dailyOrders, 'date');
         array_multisort($dates, $dailyOrders);
         $dailyRevenue = json_encode($dailyRevenue);
         $dailyOrders = json_encode($dailyOrders);
