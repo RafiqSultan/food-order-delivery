@@ -38,6 +38,10 @@
         <div class="col-lg-4 col-12 mb-lg-0 mb-3 flex-center">
             <div id="generated-revenue" class="col-11 pt-3 h-100 shadow rounded bg-white" 
                     data-daily="{{ $dailyRevenue }}" data-total="{{ $totalRevenue }}">
+                    
+                    <h1 style="text-align: center">$10000.99</h1>
+                    <h5 style="text-align: center">Revenue</h5>
+                    
             </div>
         </div>
         <div class="col-lg-4 col-12 mb-lg-0 mb-3 flex-center">
