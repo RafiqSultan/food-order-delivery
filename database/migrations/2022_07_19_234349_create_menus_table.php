@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('candy')->default('0');
             $table->integer('meal')->default('0');
             $table->integer('drink')->default('0');
+            $table->timestamps();
         });
     }
 
