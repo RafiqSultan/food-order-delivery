@@ -133,9 +133,9 @@ class DashboradController extends Controller
         // $dates = array_column($dailyRevenue, 'date');
         // array_multisort($dates, $dailyRevenue);
         // $dates = array_column($dailyOrders, 'date');
-        array_multisort($dates, $dailyOrders);
+        // array_multisort($dates, $dailyOrders);
         $dailyRevenue = json_encode($dailyRevenue);
-        $dailyOrders = json_encode($dailyOrders);
+        // $dailyOrders = json_encode($dailyOrders);
         $categoricalSales = json_encode($categoricalSales);
         $finalProductSales = json_encode($finalProductSales);
 
