@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->constrained()->onDelete('cascade');
-            $table->foreignId('menu_id')->references('id')->on('menus')->constrained()->onDelete('cascade');
-            $table->foreignId('order_id')->references('id')->on('orders')->nullable()->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('menu_id');
+            $table->unsignedBigInteger('order_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('menu_id')->references('id')->on('menus');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('quantity');
             $table->boolean('fulfilled')->nullable()->default(false);
+
         });
     }
 

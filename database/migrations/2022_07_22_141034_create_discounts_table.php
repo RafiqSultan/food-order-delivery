@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('startDate'); // CONVERT TO DATE ONLY
             $table->date('endDate'); // CONVERT TO DATE ONLY
             $table->text('description')->nullable();
+
         });
     }
 

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->default('undefined');
+            $table->string('type');
             $table->string('name');
             $table->string('description');
-            $table->decimal('price', 6, 2);
-            $table->decimal('estCost', 6, 2)->default('undefined');
+            $table->decimal('price',6, 2);
+            $table->decimal('estCost', 6, 2);
             $table->string('image');
             $table->string('size');
             $table->integer('candy')->default('0');

@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
-            $table->timestamp('dateTime');
+            $table->timestamp('dateTime')->nullable();
             $table->boolean('completed')->default(false);
             $table->string('type'); // dineIn, takeAway
         });

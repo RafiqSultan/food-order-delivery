@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained()->onDelete('cascade');
-            $table->foreignId('discount_id')->nullable()->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('discount_id');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('discount_id')->references('id')->on('discounts');
             $table->decimal('final_amount', 6, 2);
             $table->timestamps();
+
         });
     }
 
