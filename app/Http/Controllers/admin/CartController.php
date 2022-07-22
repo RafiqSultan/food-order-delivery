@@ -42,6 +42,7 @@ class CartController extends Controller
         auth()->user()->cartItems()->create([
             'menu_id' => $request->menuID,
             'quantity' => 1,
+            'order_id' =>$request->orderId,
         ]);
 
         return back()->with('success', "{$request->menuName} added to cart.");
