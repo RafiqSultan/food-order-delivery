@@ -63,7 +63,7 @@
         <div class="col-lg-4 col-12 mb-lg-0 mb-3 flex-center">
             <div id="orders" class="col-11 p-3 h-100 shadow rounded bg-white"> 
                 <h5 class="text-center">Total Orders</h5>
-                <h2 class="my-4 apexcharts-yaxis-title fw-bold text-center">{{ $totalOrders }}</h2>
+                <h2 class="my-4 apexcharts-yaxis-title fw-bold text-center"></h2>
                 <p class="small text-muted text-center">Number of orders being placed by now</p>
             </div>
         </div>
@@ -87,7 +87,7 @@
      <div class="row my-5 justify-content-between">
         <div class="col-lg-6 col-12 mb-lg-0 mb-3 flex-center">
             <div id="order-revenue-chart" class="col-11 pt-3 h-100 shadow rounded bg-white"
-                data-daily="{{ $dailyOrders }}" data-total="{{ $totalOrders }}">
+                data-daily="" data-total="">
             </div>
         </div>
         <div class="col-lg-6 col-12 mb-lg-0 mb-3 flex-center">
@@ -101,7 +101,7 @@
     <!-- Third row - Order-Revenue Mixed Chart -->
     <div class="row my-5 justify-content-between">
         <div id="order-revenue-chart" class="col-12 pt-3 h-100 shadow rounded bg-white"
-            data-daily="{{ $dailyOrders }}" data-total="{{ $totalOrders }}">
+            data-daily="" data-total="">
         </div>
     </div>
 
