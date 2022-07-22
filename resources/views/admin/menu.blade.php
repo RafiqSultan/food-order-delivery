@@ -164,7 +164,7 @@
                      <button type="submit" name="menuType" value="candies" class="btn btn-light menu-type-button">Candies</button>
                      <button type="submit" name="menuType" value="tart" class="btn btn-light menu-type-button">Cake Tart</button>
                      <button type="submit" name="menuType" value="chocolate" class="btn btn-light menu-type-button">Chocolates</button>
-                     <button type="submit" name="menuType" value="cheken" class="btn btn-light menu-type-button">Cheken</button>
+                     <button type="submit" name="menuType" value="chicken" class="btn btn-light menu-type-button">Chicken</button>
                      <button type="submit" name="menuType" value="drinks" class="btn btn-light menu-type-button">Drinks</button>
                  </form>
              </div>
@@ -177,7 +177,7 @@
                     <button type="submit" name="menuType" value="candies" class="btn btn-light menu-type-button">Candies</button>
                     <button type="submit" name="menuType" value="tart" class="btn btn-light menu-type-button">Cake Tart</button>
                     <button type="submit" name="menuType" value="chocolate" class="btn btn-light menu-type-button">Chocolates</button>
-                    <button type="submit" name="menuType" value="cheken" class="btn btn-light menu-type-button">Cheken</button>
+                    <button type="submit" name="menuType" value="chicken" class="btn btn-light menu-type-button">Chicken</button>
                     <button type="submit" name="menuType" value="drink" class="btn btn-light menu-type-button">Drinks</button>
                  </form>
              </div>
