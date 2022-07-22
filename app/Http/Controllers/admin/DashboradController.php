@@ -147,6 +147,6 @@ class DashboradController extends Controller
         
         $startDate = Carbon::parse($lastMonthDate)->format('Y-m-d');
         return view('admin.dashboard', compact("startDate", "today", "totalRevenue", "dailyRevenue", "totalCost", "grossProfit",
-                "totalOrders", "dailyOrders", "discountCodeUsed", "numCustomer", "categoricalSales", "finalProductSales")); 
+                "dailyOrders", "discountCodeUsed", "numCustomer", "categoricalSales", "finalProductSales")); 
     }
 }
